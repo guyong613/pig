@@ -1,0 +1,70 @@
+items.py文件中的DmozItem类
+parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0,parentdir)
+from items  import DmozItem
+
+mkdir tu2 建目录  
+cd tu2 进目录
+git init 初始化
+进入操作系统，拷贝所有文件及子目录到 tu2 下
+git add .  添加所有含目录到 本地仓库， 
+git commit 
+ssh-keygen -t rsa -C "youremail@example.com" 生成远程SSH
+登陆GitHub，打开“Account settings”，“SSH Keys”页面：添加ssh,
+用户主目录里找到.ssh目录,在Key文本框里粘贴id_rsa.pub文件的内容
+
+登陆GitHub，创建了一个新的Git仓库，tu2
+git remote add origin git@github.com:guyong613/.git 关联远程库
+$ git push -u origin master 推送，第一次加u参数，以后不用
+
+从远程克隆，会自建目录git clone git@github.com:michaelliao/gitskills.git
+git checkout命令加上-b参数表示创建并切换git checkout -b dev
+
+git rm -r myFolder
+删除文件夹myFolder，并把它从git的仓库管理系统中移除
+
+git rm \*~ （会递归的删除当前目录 以及 子目录下的以“~”结尾的文件）
+
+建立“.gitignore”文件，与本仓库（目录）同级以下，也只管理同级，放入想管理的目录
+
+-----------
+选择多外文件打开
+	ESC 切换模式，：输入合令， ：TABNEW 加入标签 ，切换 缓冲区 ：:q 退出
+:set nu 加入行号
+
+
+两个JAVA文件放到一个目录里，然后按下面的命令编译执行。
+
+javac -d . StaticClass.java
+javac StaticImport.java
+java StaticImport
+
+你放到包里了就要用-d进行打包编译，后面的“.”表示在当前目录下进行打包编译。
+
+
+编译没有问题，除非你的jdk版本不够？import static必须jdk5.0或以上。注意，不光是使用的jdk要5.0或以上，编译器的编译级别同样要指定5.0或以上。 
+另外，没有包结构的类是无法被import的，切记。
+
+
+1.编译
+      编译的指令是javac
+      编译方式：文件根目录 javac 文件名.java
+比如：文件名字：HelloWorld.java
+          文件路径：c:\net\test\HelloWorld.java
+          文件包名：net.test
+编译过程：
+cmd 回车
+cd c:\net\test 回车
+javac HelloWorld.java 回车   将生成一个HelloWorld.class的文件  
+或者，可以通过javac –d . 文件名.java  来生成package目录。
+2. 运行
+运行时候需要注意了，不能文件的根目录，是到文件的包目录的上层目录——可以理解为工程目录下，然后运行，文件名前需要加上包名。
+运行过程：
+cmd 回车
+C:\ 回车, 退回到根目录
+java   net.test.HelloWorld 回车   
+
+java 程序，有无package 语句，会影响存贮时的目录位置，以及编译后的运行语句,退后上层目录     java package.类名.class
+
+DOS 窗口，进入d:\     java pig.Server 启动服务端
+调用 testcmd.bat 同时启动四个客户端
