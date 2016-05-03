@@ -19,7 +19,7 @@ ssh-keygen -t rsa -C "youremail@example.com" 生成远程SSH
 用户主目录里找到.ssh目录,在Key文本框里粘贴id_rsa.pub文件的内容
 
 登陆GitHub，创建了一个新的Git仓库，tu2
-git remote add origin git@github.com:guyong613/.git 关联远程库
+git remote add origin git@github.com:guyong613/pig.git 关联远程库
 $ git push -u origin master 推送，第一次加u参数，以后不用
 
 从远程克隆，会自建目录git clone git@github.com:michaelliao/gitskills.git
