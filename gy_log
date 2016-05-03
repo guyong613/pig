@@ -1,3 +1,8 @@
+
+
+github ufogy@qq.com 123kkkk
+
+
 items.py文件中的DmozItem类
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,parentdir)
