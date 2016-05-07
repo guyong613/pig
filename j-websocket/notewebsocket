@@ -1,0 +1,19 @@
+set classpath=.;c:\Tomcat 8.0\lib\websocket-api.jar;
+javac  类名.java
+类名可随取，但注解式接入点名称@ServerEndpoint("/websocket") 一定要和 html调用时的 ws://localhost:8080/websocke 相同
+jar -cvf 类名.war 类名.class
+
+拷贝 类名.war 到 tomcat8/wepapp  下， 
+(tomcat会自动找到 类名.war ,
+并解压生成 tomcat8/wepapp/类名 的目录，和文件，
+并把其中声明的  serverendpoint 生成服务websocket)
+
+当通过@ServerEndpoint来注解EchoServer类时，它将简单传统的Java类转换成一个逻辑上的WebSocket端点。
+当部署包含EchoServer类的应用时，WebSocket实现首先扫描包含EchoServer类的WAR文件，找到其中的WebSocket端点。
+这个是引自http://book.51cto.com/art/201512/499363.htm
+经我测试，这个类必须放在c:\tomcat8\lib目录下，Tomcat才会进行扫描和转换
+
+
+最重要的是： 类名.class文件要拷贝到 c:\tomcat8\lib 目录下，
+tomcat会自动找到 类名.class ,
+并把其中声明的  serverendpoint 生成服务websocket,并等待调用
